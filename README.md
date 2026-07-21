@@ -240,29 +240,34 @@ CREATE OR REPLACE VIEW location_performance AS
     JOIN on_site_sales_summary USING(month)
     ORDER BY month;
 ```
-## Insights
+## Summary
+
+### Analysis Insights
 
 <a href="https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes" target="_blank" rel="noopener noreferrer">
     <img width="1197" height="799" alt="image" src="https://github.com/user-attachments/assets/b26983a4-2d4c-47e3-9789-a33fe5fa0bef" />
 </a>
 
+An interactive Tableau dashboard is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
 
-Interactive Tableau dashboard is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
+Insights:
 
-...add more summary here...
+### Limitations Discovered
 
-## Summary
-### Limitations Discovered:
+While working with data, I discovered 5 major data limitations that would require automation and fixing as the business is growing:
 
-* Walk-in booking counts cannot be separated from on-site player add-ons in the current data. On-site figures reflect revenue and participant counts only, not distinct bookings, and wherever total bookings are visualized, that number refers to online bookings only.
+1.  Online bookings and on-site payments are not synced with each other. In many cases, a team that already booked an escape room will add additional players on-site, but this information is not reflected in the booking system. It is not possible to assume that every on-site payment represents a player added to an existing booking, since walk-in bookings also occur, and the data provides no way to distinguish between the two, even manually. As a result, it is not possible to calculate precise summary statistics, such as average revenue per booking or average number of players per booking.
+
+2. Walk-in booking counts cannot be separated from on-site player add-ons in the current data. On-site figures reflect revenue and participant counts only, not distinct bookings, and wherever total bookings are visualized, that number refers to online bookings only.
   
-* It is not possible to identify the location where each on-site transaction was completed. The data only includes a device_id column. Some values appear frequently enough to be mapped to a location based on the escape room the transaction was for, but 17.06% are null, and 3% correspond to devices used only a handful of times.
+3. It is not possible to identify the location where each on-site transaction was completed. The data only includes a device_id column. Some values appear frequently enough to be mapped to a location based on the escape room the transaction was for, but 17.06% are null, and 3% correspond to devices used only a few times.
   
-* The net_sales data in the "on_site_sales" dataset cannot be treated as 100% accurate, since staff occasionally make entry errors, such as omitting tax or card fees, misclassifying items sold, or using a custom amount instead of selecting the correct item. These custom-amount entries don't correspond to any specific product, making them difficult or impossible to classify. Some transactions were manually entered or corrected via SQL.
+4. The net_sales data in the "on_site_sales" dataset cannot be treated as 100% accurate, since staff occasionally make entry errors, such as omitting tax or card fees, misclassifying items sold, or using a custom amount instead of selecting the correct item. These custom amount entries don't correspond to any specific product, making them difficult or impossible to classify. Some transactions were manually entered or corrected via SQL. Therefore, several on-site transactions (27, all custom-amount entries with a missing or unrecognizable device ID, typically payments processed on an employee's personal phone) could not be reliably traced to a location and were excluded from location-level analysis.
   
-* A small number of on-site transactions (27, all custom-amount entries with a missing or unrecognizable device ID, typically payments processed on an employee's personal phone) could not be reliably traced to a location and were excluded from location-level analysis.
-  
-* As of now, it is not possible to determine how many leads converted into inquiries by inquiry type for 2024–Q1 2025, since that data was not consolidated and was spread across Google Analytics, Zendesk, email, and disconnected phone lines.
+5. As of now, it is not possible to determine how many leads converted into inquiries by inquiry type for 2024–Q1 2025, since that data was not consolidated and was spread across Google Analytics, Zendesk, email, and disconnected phone lines.
 
+### Current Steps as of July 2026
+
+As of July 21st, I am working with management to address all 5 limitations, specifically enabling synchronization between both platforms. Since both platforms have significant limitations of their own, management is in the process of migrating to a new booking system that would work for both on-site and online transactions and would allow for easy identification of the location tied to each transaction. At the same time, I have been updating and fixing settings in our Square system for on-site payments, specifically by correcting item names, adding items that did not previously exist in the system, and training employees to use the correct item instead of a custom amount whenever possible. This also includes encouraging staff to be attentive and proactive in flagging mistakes so they can be corrected manually, to use only company devices (not personal phones) to process transactions, and to communicate any challenges they encounter.
 
 
