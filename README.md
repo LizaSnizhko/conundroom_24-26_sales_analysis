@@ -4,7 +4,7 @@
 
 This project analyzes sales and booking data for Conundroom Escape Rooms from July 1, 2025 through June 30, 2026. 
 
-The goal is to explore booking trends, revenue, single escape room performance, customer behavior, compare to the previous year, and see business performance across all three locations using SQL(PostgreSQL) and Tableau. The deliverable of this project would be a complete Conundroom Sales Dashboard for July 2025 - June 2026
+The goal is to explore booking trends, revenue, single escape room performance, customer behavior, compare to the previous year, and see business performance across all three locations using SQL(PostgreSQL) and Tableau. The deliverable of this project would be a complete Conundroom Sales Dashboard for July 2025 - June 2026. A ready interactive Tableau dashboard for this project is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
 
 
 ## Data
