@@ -24,6 +24,8 @@ CREATE OR REPLACE VIEW monthly_performance AS
 
     SELECT 
         bookings_summary.month,
+        bookings_summary.total_net as online_bookings_revenue,
+        COALESCE(on_site_sales_summary.total_net,0) AS on_site_revenue,
         bookings_summary.total_net + COALESCE(on_site_sales_summary.total_net,0) AS total_revenue,
         bookings_summary.total_bookings,
         bookings_summary.total_players + on_site_sales_summary.total_players AS total_players
@@ -32,3 +34,9 @@ CREATE OR REPLACE VIEW monthly_performance AS
     ORDER BY month;
 
 SELECT * FROM monthly_performance
+
+
+DROP VIEW monthly_performance
+
+
+SELECT SUM(on_site_revenue) FROM monthly_performance WHERE month >= '2025-07-01'
