@@ -6,7 +6,6 @@ This project analyzes sales and booking data for Conundroom Escape Rooms from Ju
 
 The goal is to explore booking trends, revenue, single escape room performance, customer behavior, compare to the previous year, and see business performance across all three locations using SQL(PostgreSQL) and Tableau. The deliverable of this project would be a complete Conundroom Sales Dashboard for July 2025 - June 2026. A ready interactive Tableau dashboard for this project is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
 
-
 ## Data
 The analysis uses real sales and revenue data exported from the Bookeo booking platform (online sales) and Square (on-site sales) for three Conundroom locations. The datasets contain booking and customer information, as well as payments, for 2 years (July 1, 2024 through June 30, 2026).
 
@@ -244,13 +243,33 @@ CREATE OR REPLACE VIEW location_performance AS
 
 ### Analysis Insights
 
-<a href="https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes" target="_blank" rel="noopener noreferrer">
-    <img width="1197" height="799" alt="image" src="https://github.com/user-attachments/assets/b26983a4-2d4c-47e3-9789-a33fe5fa0bef" />
+<a href="https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
+    <img width="1199" height="799" alt="Sales Dashboard" src="https://github.com/user-attachments/assets/bc571ed3-9f4f-428a-a2e3-3923b1120ab3" />
 </a>
 
-An interactive Tableau dashboard is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
+An interactive Tableau dashboard is available here: https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
-Insights:
+### Insights
+
+**Revenue and booking volume trends**
+
+Sales and booking volume have generally decreased and continue to decrease compared to 2024-25 year-over-year data. Sales vary significantly from month to month, with fluctuations of roughly +/-10-20%, but when compared to the previous year's report, the same general seasonal pattern holds: April, February, July, and September tend to be the slowest months, while December, June, November, and August tend to be the strongest. Additionally, the same period in 2024-25 (July through June) also saw a decline in booking volume, but revenue was actually growing by an average of $5k per month, meaning customers were spending more per booking during that period.
+
+**Avalon location decline**
+
+Per previous records, Avalon was the top performing location until the end of Q1 2025. Starting in Q2 2025, its revenue began falling every single quarter, and from Q4 2025 onward, the decline has been sharper, dropping by about 8.5% each quarter. This is the clearest downward trend across all three locations. Compared to July 2024-June 2025, revenue for July 2025-June 2026 dropped by $99,593, a decline of 18.66% over the year. At the same time, 2 of Avalon's 3 escape rooms rank among the 3 most profitable out of 8 total rooms, and within the top 4 most popular. However, none of the rooms have been renovated since 2024.
+
+**Downtown and Willows BP stability**
+
+Unlike Avalon, both Downtown and Willows BP have stayed more stable over the same period. Their revenue moves up and down slightly each quarter. Downtown's revenue increased by 4.49%, likely due to recent renovations and the addition of the new Vault escape room, while Willows BP's revenue decreased by 8%. Willows BP only had its party room renovated, which could help drive more bookings going forward, though this needs further analysis. Its escape rooms themselves stayed the same, and unlike the other locations, Willows BP has only been open Friday through Sunday since spring 2025.
+
+**Total revenue**
+
+Total revenue decreased by $158,481, or 11.38%, driven primarily by the decline in sales at the Avalon location.
+
+**Room-level performance**
+
+Crafted, the oldest and easiest escape room, designed for kids, has been the least popular and least profitable room. Zeppelin, on the other hand, has been the most popular by number of bookings, yet ranked only 7th in total revenue. This is largely because Zeppelin has the smallest capacity of all the rooms and is often booked for just 2 people, resulting in an average revenue per booking of only $122.
 
 ### Limitations Discovered
 
@@ -269,5 +288,4 @@ While working with data, I discovered 5 major data limitations that would requir
 ### Current Steps as of July 2026
 
 As of July 21st, I am working with management to address all 5 limitations, specifically enabling synchronization between both platforms. Since both platforms have significant limitations of their own, management is in the process of migrating to a new booking system that would work for both on-site and online transactions and would allow for easy identification of the location tied to each transaction. At the same time, I have been updating and fixing settings in our Square system for on-site payments, specifically by correcting item names, adding items that did not previously exist in the system, and training employees to use the correct item instead of a custom amount whenever possible. This also includes encouraging staff to be attentive and proactive in flagging mistakes so they can be corrected manually, to use only company devices (not personal phones) to process transactions, and to communicate any challenges they encounter.
-
 
