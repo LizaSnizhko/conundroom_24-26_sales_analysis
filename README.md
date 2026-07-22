@@ -4,7 +4,7 @@
 
 This project analyzes sales and booking data for Conundroom Escape Rooms from July 1, 2025 through June 30, 2026. 
 
-The goal is to explore booking trends, revenue, single escape room performance, customer behavior, compare to the previous year, and see business performance across all three locations using SQL(PostgreSQL) and Tableau. The deliverable of this project would be a complete Conundroom Sales Dashboard for July 2025 - June 2026. A ready interactive Tableau dashboard for this project is available here: https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26/Dashboard3?publish=yes
+The goal is to explore booking trends, revenue, single escape room performance, customer behavior, compare to the previous year, and see business performance across all three locations using SQL(PostgreSQL) and Tableau. The deliverable of this project would be a complete Conundroom Sales Dashboard for July 2025 - June 2026. A ready interactive Tableau dashboard for this project is available here: [https://public.tableau.com/app/profile/liza.snizhko/viz/ConundroomSalesDashboard2025-26](https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## Data
 The analysis uses real sales and revenue data exported from the Bookeo booking platform (online sales) and Square (on-site sales) for three Conundroom locations. The datasets contain booking and customer information, as well as payments, for 2 years (July 1, 2024 through June 30, 2026).
@@ -243,7 +243,7 @@ CREATE OR REPLACE VIEW location_performance AS
 
 ### Analysis Insights
 
-<a href="https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link" target="_blank" rel="noopener noreferrer">
+<a href="[https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard](https://public.tableau.com/views/ConundroomSalesDashboard2025-26/SalesDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)" target="_blank" rel="noopener noreferrer">
     <img width="1199" height="799" alt="Sales Dashboard" src="https://github.com/user-attachments/assets/bc571ed3-9f4f-428a-a2e3-3923b1120ab3" />
 </a>
 
